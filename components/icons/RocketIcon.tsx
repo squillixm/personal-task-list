@@ -1,0 +1,5 @@
+
+import React from 'react';
+export const RocketIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}><path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.82m5.84-2.56a6 6 0 01-7.38 5.84m2.56-5.84a6 6 0 01-5.84-7.38m5.84 2.56a6 6 0 017.38-5.84m-2.56 5.84a6 6 0 01-7.38-5.84m5.84 2.56L21 4.5" /></svg>
+);

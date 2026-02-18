@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zenith Checklist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root, html.light {
+        --background: 0 0% 100%;
+        --foreground: 222.2 84% 4.9%;
+        --card: 0 0% 100%;
+        --card-foreground: 222.2 84% 4.9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222.2 84% 4.9%;
+        --primary: 222.2 47.4% 11.2%;
+        --primary-foreground: 210 40% 98%;
+        --secondary: 210 40% 96.1%;
+        --secondary-foreground: 222.2 47.4% 11.2%;
+        --muted: 210 40% 96.1%;
+        --muted-foreground: 215.4 16.3% 46.9%;
+        --accent: 210 40% 96.1%;
+        --accent-foreground: 222.2 47.4% 11.2%;
+        --border: 214.3 31.8% 91.4%;
+        --input: 214.3 31.8% 91.4%;
+        --ring: 222.2 84% 4.9%;
+      }
+
+      html.dark {
+        --background: 222 47% 11%;
+        --foreground: 210 40% 98%;
+        --card: 222 47% 11%;
+        --card-foreground: 210 40% 98%;
+        --popover: 222 47% 11%;
+        --popover-foreground: 210 40% 98%;
+        --primary: 210 40% 98%;
+        --primary-foreground: 222 47% 11%;
+        --secondary: 217 33% 17%;
+        --secondary-foreground: 210 40% 98%;
+        --muted: 217 33% 17%;
+        --muted-foreground: 215 20% 65%;
+        --accent: 217 33% 17%;
+        --accent-foreground: 210 40% 98%;
+        --border: 217 33% 17%;
+        --input: 217 33% 17%;
+        --ring: 215 28% 93%;
+      }
+      
+      html.blue { --primary: 217.2 91.2% 59.8%; --primary-foreground: 210 40% 98%; }
+      html.green { --primary: 142.1 76.2% 36.3%; --primary-foreground: 210 40% 98%; }
+      html.rose { --primary: 346.8 77.2% 49.8%; --primary-foreground: 210 40% 98%; }
+      html.indigo { --primary: 243.8 94.9% 67.5%; --primary-foreground: 210 40% 98%; }
+      html.dark.blue { --primary: 217.2 91.2% 59.8%; --primary-foreground: 210 40% 98%; }
+      html.dark.green { --primary: 142.1 76.2% 36.3%; --primary-foreground: 210 40% 98%; }
+      html.dark.rose { --primary: 346.8 77.2% 49.8%; --primary-foreground: 210 40% 98%; }
+      html.dark.indigo { --primary: 243.8 94.9% 67.5%; --primary-foreground: 210 40% 98%; }
+
+      .font-sans { font-family: 'Inter', sans-serif; }
+      .font-serif { font-family: 'Lora', serif; }
+      .font-mono { font-family: 'Roboto Mono', monospace; }
+
+      [data-corner-radius="none"] .rounded, [data-corner-radius="none"] .rounded-sm, [data-corner-radius="none"] .rounded-md, [data-corner-radius="none"] .rounded-lg, [data-corner-radius="none"] .rounded-xl, [data-corner-radius="none"] .rounded-full { border-radius: 0; }
+      [data-corner-radius="md"] .rounded-md { border-radius: 0.375rem; } [data-corner-radius="md"] .rounded-lg { border-radius: 0.5rem; }
+      [data-corner-radius="lg"] .rounded-md { border-radius: 0.5rem; } [data-corner-radius="lg"] .rounded-lg { border-radius: 0.75rem; }
+
+      [data-icon-size="sm"] .action-icon { width: 1.3125rem; height: 1.3125rem; } /* 21px */
+      [data-icon-size="base"] .action-icon { width: 1.5rem; height: 1.5rem; } /* 24px */
+      [data-icon-size="lg"] .action-icon { width: 1.875rem; height: 1.875rem; } /* 30px */
+
+    </style>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Lora', 'serif'],
+              mono: ['Roboto Mono', 'monospace'],
+            },
+            colors: {
+              border: 'hsl(var(--border))',
+              input: 'hsl(var(--input))',
+              ring: 'hsl(var(--ring))',
+              background: 'hsl(var(--background))',
+              foreground: 'hsl(var(--foreground))',
+              primary: { DEFAULT: 'hsl(var(--primary))', foreground: 'hsl(var(--primary-foreground))' },
+              secondary: { DEFAULT: 'hsl(var(--secondary))', foreground: 'hsl(var(--secondary-foreground))' },
+              muted: { DEFAULT: 'hsl(var(--muted))', foreground: 'hsl(var(--muted-foreground))' },
+              accent: { DEFAULT: 'hsl(var(--accent))', foreground: 'hsl(var(--accent-foreground))' },
+              popover: { DEFAULT: 'hsl(var(--popover))', foreground: 'hsl(var(--popover-foreground))' },
+              card: { DEFAULT: 'hsl(var(--card))', foreground: 'hsl(var(--card-foreground))' },
+            },
+            spacing: { '4.5': '1.125rem' }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

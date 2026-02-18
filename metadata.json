@@ -1,0 +1,5 @@
+{
+  "name": "Zenith Checklist",
+  "description": "A personalized checklist application that helps you organize tasks with nested items, profiles, and smart suggestions. Customize your experience with themes and manage your productivity with features like due dates, notes, repeating tasks, and archiving.",
+  "requestFramePermissions": []
+}
