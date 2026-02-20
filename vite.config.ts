@@ -9,7 +9,11 @@ export default defineConfig(({ mode }) => {
         port: 3000,
         host: '0.0.0.0',
       },
+      base: '/zenith-checklist/', // Replace 'zenith-checklist' with your repository name
       plugins: [react()],
+      build: {
+        outDir: 'docs',
+      },
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
         'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
